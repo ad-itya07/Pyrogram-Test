@@ -3,17 +3,13 @@ from pyrogram import Client
 import requests
 import random
 
-API_ID = 27720436
-API_HASH = 'ece2dbca5ad52112837c24b224b5d53a'
-BOT_TOKEN = '7171158309:AAFIwwh-PWGTO_D89-2EHuV28J_hex4dx54'
-
 IMG_URL = 'https://imgs.search.brave.com/PBR49CmBXq8BqXnvTK6CvlPAvXt-Ugb-iRmbN_hcF2c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9ocmx0eDEy/cGw4aHEvNnpSR1pu/MjFxekVOd2Rkdlcz/Wmd0Ti8zMzQ5NmZj/ZDM2YTg5MWE2Mzcw/NGFmNzJjNzMzNDVl/NC9Ib2xpLVRodW1i/LmpwZw'
 
 
 async def main():
     # app = Client ka use krke hmlog connection banarhe hai apne account se and server se.
             # Client parenthsis k andar jaa kar diffferent parameter ko visit kri (intersting)
-    app = Client("my_bot", api_id=API_ID, api_hash= API_HASH, bot_token= BOT_TOKEN)
+    app = Client("my_bot")
     async with app:
         await send_media(app)
     
