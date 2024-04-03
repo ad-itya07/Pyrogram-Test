@@ -5,11 +5,9 @@ import random
 
 IMG_URL = 'https://imgs.search.brave.com/PBR49CmBXq8BqXnvTK6CvlPAvXt-Ugb-iRmbN_hcF2c/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9ocmx0eDEy/cGw4aHEvNnpSR1pu/MjFxekVOd2Rkdlcz/Wmd0Ti8zMzQ5NmZj/ZDM2YTg5MWE2Mzcw/NGFmNzJjNzMzNDVl/NC9Ib2xpLVRodW1i/LmpwZw'
 
+app = Client("my_bot")
 
 async def main():
-    # app = Client ka use krke hmlog connection banarhe hai apne account se and server se.
-            # Client parenthsis k andar jaa kar diffferent parameter ko visit kri (intersting)
-    app = Client("my_bot")
     async with app:
         await send_media(app)
     
@@ -26,6 +24,10 @@ async def send_media(app):
     response = requests.get(image_url)
     with open(local_path,'wb') as f: # 'wb' means ki BINARY WRITE form me file ko open krrhe hai
         f.write(response.content)           #i.e when working with images, to ensure no charecter conversion occur
+
+    # There is another Method for downloading Image file and storing it locally
+    # async with app.get_file(image_url) as file:
+        # await file.download()
 
     # Send the downloaded photo to the bot owner (you) using your user ID
     await app.send_photo("@sspark_33" , photo=local_path, caption=caption)
