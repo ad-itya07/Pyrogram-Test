@@ -2,11 +2,11 @@
 from pyrogram import Client , filters 
 from pyrogram.types import InlineKeyboardButton , InlineKeyboardMarkup , InlineQueryResultArticle , InputTextMessageContent
 
-API_ID = 27720436
-API_HASH = 'ece2dbca5ad52112837c24b224b5d53a'
-BOT_TOKEN = '7171158309:AAFIwwh-PWGTO_D89-2EHuV28J_hex4dx54'
+# API_ID = xxxx
+# API_HASH = 'xxxxxxx'
+# BOT_TOKEN = 'xxxxxxxx'
 
-app = Client("INLINE_QUERY_test", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+app = Client("INLINE_QUERY_test")#, api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 @app.on_inline_query()
 async def answer(client, inline_query):
